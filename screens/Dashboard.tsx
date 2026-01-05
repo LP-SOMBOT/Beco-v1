@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Moon, TrendingUp } from 'lucide-react';
+import { ChevronDown, Moon, TrendingUp, Wallet, Users, Phone } from 'lucide-react';
 
 export const DashboardScreen: React.FC = () => {
   return (
@@ -45,7 +45,9 @@ export const DashboardScreen: React.FC = () => {
       <div className="grid grid-cols-2 gap-4">
         {/* Metric 1 */}
         <div className="bg-white rounded-3xl p-5 shadow-sm space-y-3">
-           <div className="w-10 h-10 rounded-xl bg-blue-500 shadow-md shadow-blue-500/20"></div>
+           <div className="w-10 h-10 rounded-xl bg-blue-500 shadow-md shadow-blue-500/20 flex items-center justify-center">
+              <Wallet className="text-white" size={20} />
+           </div>
            <div>
               <h3 className="text-2xl font-bold text-gray-900">$0</h3>
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Total Due</p>
@@ -55,7 +57,9 @@ export const DashboardScreen: React.FC = () => {
         {/* Metric 2 */}
         <div className="bg-white rounded-3xl p-5 shadow-sm space-y-3 relative overflow-hidden">
            <div className="absolute top-4 right-4 bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">+12%</div>
-           <div className="w-10 h-10 rounded-xl bg-green-500 shadow-md shadow-green-500/20"></div>
+           <div className="w-10 h-10 rounded-xl bg-green-500 shadow-md shadow-green-500/20 flex items-center justify-center">
+              <Users className="text-white" size={20} />
+           </div>
            <div>
               <h3 className="text-2xl font-bold text-gray-900">0</h3>
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Paid Count</p>
@@ -75,7 +79,9 @@ export const DashboardScreen: React.FC = () => {
 
         {/* Metric 4 */}
         <div className="bg-white rounded-3xl p-5 shadow-sm space-y-3">
-           <div className="w-10 h-10 rounded-xl bg-orange-500 shadow-md shadow-orange-500/20"></div>
+           <div className="w-10 h-10 rounded-xl bg-orange-500 shadow-md shadow-orange-500/20 flex items-center justify-center">
+              <Phone className="text-white" size={20} />
+           </div>
            <div>
               <h3 className="text-2xl font-bold text-gray-900">0</h3>
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Calls</p>
