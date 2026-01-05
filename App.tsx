@@ -3,6 +3,7 @@ import { Screen, User } from './types';
 import { AuthScreen } from './screens/Auth';
 import { DashboardScreen } from './screens/Dashboard';
 import { BottomNav } from './components/BottomNav';
+import { InstallBanner } from './components/InstallBanner';
 import { BaafiyeScreen } from './screens/Baafiye';
 import { AnalysisScreen } from './screens/Analysis';
 import { ServicesScreen } from './screens/Services';
@@ -174,7 +175,12 @@ function App() {
   };
 
   if (!isAuthenticated) {
-    return <AuthScreen onLogin={handleLogin} />;
+    return (
+      <>
+        <InstallBanner />
+        <AuthScreen onLogin={handleLogin} />
+      </>
+    );
   }
 
   // Full screen views that don't show bottom nav
@@ -183,6 +189,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
       <div className="max-w-md mx-auto min-h-screen bg-gray-50 relative shadow-2xl overflow-hidden">
+        <InstallBanner />
         {renderScreen()}
         {!isFullScreen && (
             <BottomNav currentScreen={currentScreen} onNavigate={setCurrentScreen} />
